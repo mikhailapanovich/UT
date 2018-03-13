@@ -4,11 +4,10 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import static org.testng.Assert.assertEquals;
-import static org.testng.Assert.assertFalse;
 
 public class TestDetectTriangle {
     private Triangle triangle;
-    
+
     @DataProvider(name = "dataOrdinaryTriangle")
     public Object[][] createDataOrdinaryTriangle() {
         triangle = new Triangle(0, 0, 0);
