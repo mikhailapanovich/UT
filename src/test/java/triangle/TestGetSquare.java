@@ -30,7 +30,7 @@ public class TestGetSquare {
     }
 
     @Test(dataProvider = "dataInvalidTriangle", expectedExceptions = TriangleDoesNotExistException.class)
-    public void testAreaOfInvalidTriangleThrowsException(double a, double b, double c) {
+    public void testGetSquareThrowsExceptionWhenInvalidTriangle(double a, double b, double c) {
         Triangle inst = new Triangle(a, b, c);
         inst.checkTriangle();
         inst.getSquare();

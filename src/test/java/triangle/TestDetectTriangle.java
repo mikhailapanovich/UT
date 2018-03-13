@@ -58,6 +58,13 @@ public class TestDetectTriangle {
         };
     }
 
+    @DataProvider(name = "dataInvalidTriangle")
+    public Object[][] createDataInvalidTriangle() {
+        return new Object[][]{
+                {1, 2, 3},
+        };
+    }
+
 
     @Test(dataProvider = "dataOrdinaryTriangle")
     public void testTriangleIsOrdinary(double a, double b, double c, int stateExpected) {
@@ -85,5 +92,12 @@ public class TestDetectTriangle {
         triangle = new Triangle(a, b, c);
         int stateActual = triangle.detectTriangle();
         assertEquals(stateActual, stateExpected);
+    }
+
+    @Test(dataProvider = "dataInvalidTriangle", expectedExceptions = TriangleDoesNotExistException.class)
+    public void testDetectTriangleThrowsExceptionWhenInvalidTriangle(double a, double b, double c) {
+        Triangle inst = new Triangle(a, b, c);
+        inst.checkTriangle();
+        inst.detectTriangle();
     }
 }
