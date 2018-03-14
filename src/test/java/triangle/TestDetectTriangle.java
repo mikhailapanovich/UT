@@ -43,12 +43,13 @@ public class TestDetectTriangle {
                 {3, 4, 5, triangle.TR_RECTANGULAR},
                 {5, 3, 4, triangle.TR_RECTANGULAR},
                 {4, 5, 3, triangle.TR_RECTANGULAR},
-                {0.3, 0.4, 0.5, triangle.TR_RECTANGULAR},
-                {0.5, 0.3, 0.4, triangle.TR_RECTANGULAR},
-                {0.4, 0.5, 0.3, triangle.TR_RECTANGULAR},
+                {3 * 1e-14, 4 * 1e-14, 5 * 1e-14, triangle.TR_RECTANGULAR},
+                {5 * 1e-14, 3 * 1e-14, 4 * 1e-14, triangle.TR_RECTANGULAR},
+                {4 * 1e-14, 5 * 1e-14, 3 * 1e-14, triangle.TR_RECTANGULAR},
         };
     }
 
+    // template dataprovider for overflow tests
     @DataProvider(name = "dataOrdinaryTriangleWithBigSides")
     public Object[][] createOrdinaryTriangleWithBigSides() {
         triangle = new Triangle(0, 0, 0);
