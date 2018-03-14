@@ -52,7 +52,7 @@ public class TestCheckTriangle {
         assertEquals(triangle.getMessage(), message);
     }
 
-    @Test(dataProvider = "dataWithSideLessThanZero")
+    @Test(dataProvider = "dataWithSideEqualToZero")
     public void testSideEqualToZero(double a, double b, double c, String message) {
         triangle = new Triangle(a, b, c);
         assertFalse(triangle.checkTriangle());
