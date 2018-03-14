@@ -45,13 +45,6 @@ public class TestCheckTriangle {
         };
     }
 
-    @Test
-    public void testAllSidesAreZero() {
-        triangle = new Triangle(0, 0, 0);
-        assertFalse(triangle.checkTriangle());
-        System.out.println(triangle.getMessage());
-    }
-
     @Test(dataProvider = "dataWithSideLessThanZero")
     public void testSideLessThanZero(double a, double b, double c, String message) {
         triangle = new Triangle(a, b, c);
